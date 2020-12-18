@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   clima = '';
   query = false;
   loading = false;
+  mostrarError = false;
 
   constructor(private _climaService: ClimaService) { }
 
@@ -30,7 +31,21 @@ export class DashboardComponent implements OnInit {
       this.tempetura = data.main.temp - 273
       this.humedad = data.main.humidity
       this.clima = data.weather[0].main
+    }, error => {
+      console.log(error);
+      this.loading = false;
+      this.error();
     })
   }
+
+  error() {
+    this.mostrarError = true;
+    setTimeout(() => {
+      this.mostrarError = false;
+      this.ciudad = '';
+    }, 3000);
+  }
+
+
 
 }
