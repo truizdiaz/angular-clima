@@ -8,11 +8,11 @@
                     placeholder="Ingrese Ciudad">
             <button (click)="obtenerClima()" class="btn btn-primary btn-lg btn-block mt-4 size"
                     [disabled]="ciudad == ''">OBTENER CLIMA</button>
-            <div class="card mt-3">
+            <div *ngIf="query" class="card mt-3">
                 <div class="card-body">
-                    <p><b>Temperatura: </b></p>
-                    <p><b>Humedad: </b></p>
-                    <p><b>Clima</b> </p>
+                    <p><b>Temperatura: </b>{{ tempetura | number: '1.2-2' }} °C</p>
+                    <p><b>Humedad: </b> {{ humedad }}</p>
+                    <p><b>Clima: </b> {{ clima }} </p>
                 </div>
             </div>
         </div>
