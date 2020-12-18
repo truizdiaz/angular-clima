@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "clima"
+  "defaultProject": "clima",
+  "cli": {
+    "analytics": "156c956d-f928-44ef-8aff-e7d38c234ac6"
+  }
 }
